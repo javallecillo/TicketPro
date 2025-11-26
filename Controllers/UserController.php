@@ -30,10 +30,10 @@
 
                 if(empty($user->username)) {
                     echo '<div class="alert alert-danger" role="alert">El nombre de usuario es obligatorio</div>';
+                    
                     $success = false;
                 }
 
-                //echo json_encode($user);
                 $this->userModel->save($user);
                 return $user;
             }

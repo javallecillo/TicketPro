@@ -36,6 +36,8 @@ include_once __DIR__ . '/../../Config/Conexion.php';
 
         <!-- SweetAlert2 CSS -->
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+        <script src="/Content/Jquery/jquery-3.1.1.min.js"></script>
 </head>
 <body class="theme-red">
         <!-- Sidebar lateral -->
