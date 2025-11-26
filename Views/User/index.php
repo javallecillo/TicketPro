@@ -75,4 +75,22 @@
     </div>
 </div>
 
+<script>
+    function eliminar(id) {
+        if(confirm("¿Está seguro de eliminar este usuario?")) {
+            var data = {id:id, table:'user'};
 
+            $.post("/API?method=Delete", data, function(dat) {
+                console.log(dat);
+                if(dat.success) {
+                    alert(dat.message);
+                    location.reload();
+                } else {
+                    alert("Error: " + dat.message);
+                }
+            })
+        }
+        
+    }
+
+</script>

@@ -64,5 +64,33 @@
     
     <!-- Custom JS para sidebar -->
     <script src="/Content/dist/js/sidebar.js"></script>
+
+    <!-- SweetAlert2 JS -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+     <script>
+        <?php
+        // Chequear si existe un mensaje 'alert' en la sesión
+        if (Session::has('alert')) {
+            $alert = Session::get('alert');
+            // Escapar los textos para evitar problemas en JavaScript
+            $icon = htmlspecialchars($alert['icon'] ?? 'info', ENT_QUOTES, 'UTF-8');
+            $title = htmlspecialchars($alert['title'] ?? 'Aviso', ENT_QUOTES, 'UTF-8');
+            $text = htmlspecialchars($alert['text'] ?? 'Operación completada.', ENT_QUOTES, 'UTF-8');
+            
+            // Imprime el código JavaScript para mostrar la alerta
+            echo "Swal.fire({
+                icon: '{$icon}',
+                title: '{$title}',
+                text: '{$text}',
+                showConfirmButton: true
+            });";
+
+            //Borrar la variable de sesión para que no se muestre de nuevo
+            Session::forget('alert'); 
+        }
+        ?>
+    </script>
+
 </body>
 </html>

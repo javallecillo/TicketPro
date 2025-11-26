@@ -33,6 +33,9 @@ include_once __DIR__ . '/../../Config/Conexion.php';
                         /* Alternativa para elementos específicos si fuese necesario */
                         ::-webkit-scrollbar-thumb { background: transparent; }
                 </style>
+
+        <!-- SweetAlert2 CSS -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body class="theme-red">
         <!-- Sidebar lateral -->
