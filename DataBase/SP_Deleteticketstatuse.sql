@@ -1,5 +1,5 @@
 DELIMITER //
-CREATE PROCEDURE SP_Deleteticketstatuse (
+CREATE PROCEDURE SP_Deleteticketstatus (
 	IN _id INTEGER
 ) 
 BEGIN

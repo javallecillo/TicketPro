@@ -28,19 +28,14 @@
                     //echo "$key : $value <br>";
                 }
 
-                if(empty($user->username)) {
-                    echo '<div class="alert alert-danger" role="alert">El nombre de usuario es obligatorio</div>';
-                    
-                    $success = false;
-                }
-
+                //echo json_encode($user);
                 $this->userModel->save($user);
                 return $user;
             }
 
-            $data = $this->userModel->getForId($id); 
-            
-            if(!$data) {
+            $data = $this->userModel->getForId($id);
+
+            if (!$data) {
                 $data = new eUser();
                 $data->id = $this->userModel->getNewId();
             }

@@ -33,7 +33,7 @@
     $stmt ->bindParam(':id', $id);
     if($stmt->execute()){
         $json = array(
-            'message' => "Registro eliminado correctamente de la tabla $table!",
+            'message' => "Registro eliminado correctamente!",
             'success' => true
 
         );

@@ -1,5 +1,5 @@
 DELIMITER //
-CREATE PROCEDURE SP_Deletebranche (
+CREATE PROCEDURE SP_Deletebranch (
 	IN _id INTEGER
 ) 
 BEGIN

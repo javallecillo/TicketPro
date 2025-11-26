@@ -49,7 +49,7 @@
     }).then((result) => {
         if (!result.isConfirmed) return;
 
-        var data = { id: id, table: 'user', uid: 'consultasAPI', pw: 'API*Data123*' };
+        var data = { id: id, table: 'service'};
 
         $.ajax({
             url: "/API?method=Delete",
