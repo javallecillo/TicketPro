@@ -117,32 +117,37 @@
     }*/
 
    function eliminar(id) {
+    Swal.fire({
+        title: "¿Está seguro?",
+        text: "¡No podrá revertir esto!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#b70124",
+        cancelButtonColor: "#5c636a",
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (!result.isConfirmed) return;
 
-        Swal.fire({
-            title: "¿Está seguro?",
-            text: "¡No podrá revertir esto!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#b70124",
-            cancelButtonColor: "#5c636a",
-            confirmButtonText: "Sí, eliminar",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                var data = {id:id, table:'user'};
+        var data = { id: id, table: 'user', uid: 'consultasAPI', pw: 'API*Data123*' };
 
-                $.post("/API?method=Delete", data, function(dat) {
-                    console.log(dat);
-                    if(dat.success) {
-                        Swal.fire("Eliminado", dat.message || "Registro eliminado correctamente.", "success");
-                        location.reload();
-                    } else {
-                        Swal.fire("Error", (dat && dat.message) ? dat.message : "Error al eliminar el registro.", "error");
-                    }
-                })
-
-                
+        $.ajax({
+            url: "/API?method=Delete",
+            method: "POST",
+            data: data,
+            dataType: "json"
+        }).done(function(res) {
+            if (res && res.success) {
+                Swal.fire("Eliminado", res.message || "Registro eliminado correctamente.", "success")
+                    .then(() => location.reload());
+            } else {
+                Swal.fire("Error", res?.message || "Error al eliminar el registro.", "error");
             }
+        }).fail(function(xhr) {
+            console.error("API error:", xhr);
+            const msg = xhr.responseJSON?.message || xhr.responseText || "Error en la petición";
+            Swal.fire("Error", msg, "error");
         });
-    }
+    });
+}
 </script>
