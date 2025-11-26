@@ -76,46 +76,6 @@
 </div>
 
 <script>
-    /*function eliminar(id) {
-        Swal.fire({
-            title: "¿Está seguro?",
-            text: "¡No podrá revertir esto!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#b70124",
-            cancelButtonColor: "#5c636a",
-            confirmButtonText: "Sí, eliminar",
-            cancelButtonText: "Cancelar"
-        }).then(async (result) => {
-            if (!result.isConfirmed) return;
-
-            try {
-                const res = await fetch('/API?method=Delete', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: id, table: 'user', uid: 'consultasAPI', pw: 'API*Data123*' })
-                });
-
-                if (!res.ok) {
-                    const text = await res.text();
-                    throw new Error('HTTP ' + res.status + ' - ' + text);
-                }
-
-                const data = await res.json();
-
-                if (data && data.success) {
-                    await Swal.fire("Eliminado", data.message || "Registro eliminado correctamente.", "success");
-                    location.reload();
-                } else {
-                    Swal.fire("Error", (data && data.message) ? data.message : "Error al eliminar el registro.", "error");
-                }
-            } catch (err) {
-                console.error('Error eliminar:', err);
-                Swal.fire("Error", "No se pudo conectar con el servidor o hubo un error interno.", "error");
-            }
-        });
-    }*/
-
    function eliminar(id) {
     Swal.fire({
         title: "¿Está seguro?",

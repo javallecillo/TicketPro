@@ -1,8 +1,8 @@
 DELIMITER //
 CREATE PROCEDURE SP_Deletebranche (
-	IN _Id INTEGER
+	IN _id INTEGER
 ) 
 BEGIN
 
-	DELETE FROM Branches WHERE Id=_Id;
+	DELETE FROM Branches WHERE id=_id;
 END //
