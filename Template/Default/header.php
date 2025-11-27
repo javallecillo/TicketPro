@@ -10,7 +10,11 @@ include_once __DIR__ . '/../../Config/Conexion.php';
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sistema Web - Plantilla Moderna</title>
+        <!-- Icono de la pestaña -->
+        <link rel="icon" type="image/ico" href="/Content/Demo/img/LOGO_TP_ROJO_bg.ico">
+
+        <!-- Título de la página -->
+        <title>TicketPro - BAC Credomatic</title>
     
         <!-- Bootstrap CSS -->
         <link href="/Content/dist/css/bootstrap.min.css" rel="stylesheet">

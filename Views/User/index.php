@@ -24,8 +24,12 @@
         <div class="card-header-title">Lista de Usuarios</div>
 
         <div class="pulleft">
-            <a href='/User/Registry/' type="button" class="btn btn-sm btn-primary">Registrar Usuario</a>
-        </div>
+        <a href='/User/Registry/' type="button" class="btn btn-sm btn-primary">Registrar Usuario</a>
+        
+        <a href='/Reporte/ReporteUsuarios' target="_blank" class="btn btn-sm btn-secondary me-2">
+            <i class="fa fa-file-pdf"></i> Generar Reporte PDF
+        </a>
+    </div>
     </div>
 
     <div class="table-responsive-md">
